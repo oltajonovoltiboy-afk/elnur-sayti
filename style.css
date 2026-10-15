@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+body { 
+    font-family: 'Inter', sans-serif; 
+    scroll-behavior: smooth; 
+}
+
+.hero-bg {
+    background: radial-gradient(circle at right, rgba(16, 185, 129, 0.05) 0%, rgba(255,255,255,1) 50%);
+}
+
+/* Hover Animation for Cards */
+.hover-card-bounce {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hover-card-bounce:hover {
+    transform: translateY(-15px);
+}
+
+/* Modal Styles */
+.fixed.inset-0.z-\[100\] {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.fixed.inset-0.z-\[100\].show {
+    display: flex;
+    opacity: 1;
+}

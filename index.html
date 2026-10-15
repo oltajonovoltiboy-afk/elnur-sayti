@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elnur O'quv Markazi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-emerald-500 rounded-xl flex items-center justify-center text-white font-bold text-2xl shadow-lg shadow-emerald-200">E</div>
+                    <span class="font-extrabold text-2xl text-slate-900 tracking-tight">Elnur</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex space-x-8">
+                    <a href="#home" class="text-slate-600 hover:text-emerald-500 font-medium transition">Bosh Sahifa</a>
+                    <a href="#advantages" class="text-slate-600 hover:text-emerald-500 font-medium transition">Afzalliklar</a>
+                    <a href="#about" class="text-slate-600 hover:text-emerald-500 font-medium transition">Biz Haqimizda</a>
+                    <a href="#courses" class="text-slate-600 hover:text-emerald-500 font-medium transition">Kurslar</a>
+                    <a href="#team" class="text-slate-600 hover:text-emerald-500 font-medium transition">Jamoa</a>
+                    <a href="#contact-section" class="text-slate-600 hover:text-emerald-500 font-medium transition">Bog'lanish</a>
+                </div>
+                
+                <div class="hidden lg:flex items-center">
+                    <button onclick="openModal('registerModal')" class="bg-emerald-500 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-emerald-600 transition shadow-lg shadow-emerald-200 transform hover:-translate-y-0.5">Kursga Yozilish</button>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-slate-800 text-2xl focus:outline-none p-2">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 absolute w-full left-0 shadow-xl flex-col divide-y divide-slate-100">
+                <a href="#home" class="p-4 text-slate-600 hover:text-emerald-500 hover:bg-slate-50 font-medium transition block">Bosh Sahifa</a>
+                <a href="#advantages" class="p-4 text-slate-600 hover:text-emerald-500 hover:bg-slate-50 font-medium transition block">Afzalliklar</a>
+                <a href="#about" class="p-4 text-slate-600 hover:text-emerald-500 hover:bg-slate-50 font-medium transition block">Biz Haqimizda</a>
+                <a href="#courses" class="p-4 text-slate-600 hover:text-emerald-500 hover:bg-slate-50 font-medium transition block">Kurslar</a>
+                <a href="#team" class="p-4 text-slate-600 hover:text-emerald-500 hover:bg-slate-50 font-medium transition block">Jamoa</a>
+                <a href="#contact-section" class="p-4 text-slate-600 hover:text-emerald-500 hover:bg-slate-50 font-medium transition block">Bog'lanish</a>
+                <div class="p-4">
+                    <button onclick="openModal('registerModal')" class="w-full bg-emerald-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-emerald-600 transition shadow-lg shadow-emerald-200 text-center">Kursga Yozilish</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-12 md:pt-20 pb-20 md:pb-32 overflow-hidden bg-white hero-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-slate-800 tracking-tight leading-[1.1] mb-6">
+                    Elnur o'quv markazi <br class="hidden sm:block">
+                    <span class="text-emerald-500">Sifatli ta'lim siz uchun!</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-500 mb-8 md:mb-10 max-w-2xl leading-relaxed">
+                    Malakali ustozlardan dars oling. O'z kelajagingizni biz bilan poydevorini quring. Imtihonlarni muvaffaqiyatli topshiring!
+                </p>
+                <div class="flex flex-col sm:flex-row flex-wrap gap-4 items-start sm:items-center">
+                    <button onclick="openModal('registerModal')" class="w-full sm:w-auto justify-center bg-emerald-500 text-white px-8 py-4 rounded-full font-bold hover:bg-emerald-600 transition shadow-xl shadow-emerald-200 flex items-center gap-2 text-lg transform hover:-translate-y-1">
+                        Kursga Yozilish <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <a href="#about" class="w-full sm:w-auto justify-center bg-white text-slate-700 border border-slate-200 px-8 py-4 rounded-full font-bold hover:bg-slate-50 transition shadow-sm flex items-center gap-3 text-lg">
+                        <div class="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-500 text-sm">
+                            <i class="fas fa-play ml-1"></i>
+                        </div>
+                        Batafsil
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Decorations -->
+        <div class="absolute top-40 right-10 md:right-20 w-4 h-4 bg-emerald-400 rounded-full shadow-lg shadow-emerald-200"></div>
+        <div class="absolute bottom-20 left-10 w-6 h-6 bg-blue-400 rounded-full opacity-50 blur-[2px]"></div>
+        <div class="absolute top-20 right-0 md:right-1/4 w-64 md:w-96 h-64 md:h-96 bg-emerald-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 pointer-events-none"></div>
+    </section>
+
+    <!-- O'quv Dasturlari (Afzalliklar) -->
+    <section id="advantages" class="py-16 md:py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Bizning afzalliklarimiz</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <!-- Stat 1 -->
+                <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100 text-center hover-card-bounce">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-emerald-100 text-emerald-500 rounded-full flex items-center justify-center text-3xl md:text-4xl mx-auto mb-6 shadow-inner">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-3">Malakali o'qituvchilar</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Tajribali va talabchan, ustozlardan bilim olish va ustoz shogird an'anasiga binoan tajriba oshirish imkoniyati.</p>
+                </div>
+                <!-- Stat 2 -->
+                <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100 text-center hover-card-bounce">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-blue-100 text-blue-500 rounded-full flex items-center justify-center text-3xl md:text-4xl mx-auto mb-6 shadow-inner">
+                        <i class="fas fa-pen-nib"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-3">Bilim sifati monitoringi</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Markazda har bir o'qituvchi dars berish sifati har hafta markaz ma'muriyati tomonidan nazorat qilinadi.</p>
+                </div>
+                <!-- Stat 3 -->
+                <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100 text-center hover-card-bounce">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-purple-100 text-purple-500 rounded-full flex items-center justify-center text-3xl md:text-4xl mx-auto mb-6 shadow-inner">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-3">Darsdan tashqari kurslar</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Darsdan tashqari bizning coworking zonamizda bepul dars mashg'ulotlarida qatnashish imkoniyati.</p>
+                </div>
+                <!-- Stat 4 -->
+                <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100 text-center hover-card-bounce">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-orange-100 text-orange-500 rounded-full flex items-center justify-center text-3xl md:text-4xl mx-auto mb-6 shadow-inner">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-3">Muntazam nazorat</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Har bir o'quvchi muntazam nazorat va online ota-ona nazorati ilovalari orqali kuzatish imkoniyatini yaratadi.</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mt-8 md:mt-12">
+                 <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100 text-center hover-card-bounce">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-emerald-100 text-emerald-500 rounded-full flex items-center justify-center text-3xl md:text-4xl mx-auto mb-6 shadow-inner">
+                        <i class="fas fa-bezier-curve"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-3">Samarali o'quv dasturlar</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Markazimizda o'quv dasturlari, innovatsion metodlarga asoslangan.</p>
+                </div>
+                 <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100 text-center hover-card-bounce">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-blue-100 text-blue-500 rounded-full flex items-center justify-center text-3xl md:text-4xl mx-auto mb-6 shadow-inner">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-3">Malakali ustozlar</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Bizning ustozlarimiz 5-10, 20-25 yillik tajribaga ega ustozlardir.</p>
+                </div>
+                 <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100 text-center hover-card-bounce">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-purple-100 text-purple-500 rounded-full flex items-center justify-center text-3xl md:text-4xl mx-auto mb-6 shadow-inner">
+                        <i class="fas fa-pen"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-3">Qulay shart-sharoit</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Bizda zamonaviy sinfxona va coworking sharoitlari yaratilgan.</p>
+                </div>
+                 <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100 text-center hover-card-bounce">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-orange-100 text-orange-500 rounded-full flex items-center justify-center text-3xl md:text-4xl mx-auto mb-6 shadow-inner">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-3">Muntazam nazorat</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Bizning virtual dasturlarimiz orqali o'quvchilar muntazam nazorat qilinadi.</p>
+                </div>
+            </div>
+            
+            <!-- Number Stats -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mt-12">
+                <div class="bg-white p-4 md:p-6 rounded-2xl shadow-sm border border-slate-100 text-center">
+                    <h3 class="text-3xl md:text-4xl font-bold text-rose-500 mb-2">20+</h3>
+                    <p class="text-slate-600 text-xs md:text-base font-medium">Tajribali ustozlar</p>
+                </div>
+                <div class="bg-white p-4 md:p-6 rounded-2xl shadow-sm border border-slate-100 text-center">
+                    <h3 class="text-3xl md:text-4xl font-bold text-blue-500 mb-2">450+</h3>
+                    <p class="text-slate-600 text-xs md:text-base font-medium">Tahsil olayotgan abituriyentlar</p>
+                </div>
+                <div class="bg-white p-4 md:p-6 rounded-2xl shadow-sm border border-slate-100 text-center">
+                    <h3 class="text-3xl md:text-4xl font-bold text-purple-500 mb-2">36+</h3>
+                    <p class="text-slate-600 text-xs md:text-base font-medium">Samarali kurslar</p>
+                </div>
+                <div class="bg-white p-4 md:p-6 rounded-2xl shadow-sm border border-slate-100 text-center">
+                    <h3 class="text-3xl md:text-4xl font-bold text-emerald-500 mb-2">25+</h3>
+                    <p class="text-slate-600 text-xs md:text-base font-medium">Yillik tajriba</p>
+                </div>
+            </div>
+            <div class="flex justify-center mt-6 md:mt-8 px-4">
+                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center w-full max-w-sm">
+                    <h3 class="text-4xl font-bold text-red-500 mb-2">2185+</h3>
+                    <p class="text-slate-600 font-medium">Biz orqali talaba bo'lgan o'quvchilar</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Biz Haqimizda -->
+    <section id="about" class="py-16 md:py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-8 md:mb-10">Biz haqimizda</h2>
+            
+            <div class="rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl mb-8 md:mb-10">
+                <div class="bg-slate-200 aspect-video w-full flex items-center justify-center relative bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');">
+                     <div class="absolute inset-0 bg-black/20"></div>
+                     <span class="text-white font-bold text-xl md:text-2xl relative z-10 drop-shadow-md px-4">Elnur O'quv Markazi Jamoasi</span>
+                </div>
+            </div>
+            
+            <p class="text-base md:text-lg text-slate-600 leading-relaxed max-w-4xl mx-auto px-2">
+                <strong class="text-slate-900">Elnur o'quv markazi</strong> - Xorazmdagi eng katta, tabiiy va aniq fanlarni o'qitishga ixtisoslashgan ta'lim muassasasi bo'lib, malakali ustozlar tomonidan asos solingan. Markazda o'z sohasining bilimdonlari yetishib kelmoqda. Ma'lumot o'rnida shuni aytish joizki, shu paytgacha 2000 dan ortiq o'quvchilarga sifatli ta'lim bergan. Markazimizning asosiy maqsadlaridan biri - yurtimiz yoshlarining bo'sh vaqtini mazmunli tashkil etish va sifatli ta'limni yuksaltirishdan iborat.
+            </p>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-16 md:py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Bizning Kurslar</h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Course 1 -->
+                <div class="bg-white rounded-3xl p-6 md:p-8 border border-slate-100 shadow-sm text-center flex flex-col items-center">
+                    <div class="w-20 h-20 md:w-24 md:h-24 bg-rose-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-flask text-3xl md:text-4xl text-rose-500"></i>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-3">Kimyo</h3>
+                    <p class="text-slate-500 mb-8 leading-relaxed text-sm md:text-base">Kimyo fanini nazariy va amaliy tarzda mukammal o'rganing.</p>
+                    <button onclick="openModal('registerModal')" class="mt-auto px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-500 font-bold hover:bg-emerald-500 hover:text-white transition w-full">Batafsil ma'lumot</button>
+                </div>
+                <!-- Course 2 -->
+                <div class="bg-white rounded-3xl p-6 md:p-8 border border-slate-100 shadow-sm text-center flex flex-col items-center">
+                    <div class="w-20 h-20 md:w-24 md:h-24 bg-emerald-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-leaf text-3xl md:text-4xl text-emerald-500"></i>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-3">Biologiya</h3>
+                    <p class="text-slate-500 mb-8 leading-relaxed text-sm md:text-base">Muntazam ravishda biologiya fanini mukammal o'rganing.</p>
+                    <button onclick="openModal('registerModal')" class="mt-auto px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-500 font-bold hover:bg-emerald-500 hover:text-white transition w-full">Batafsil ma'lumot</button>
+                </div>
+                <!-- Course 3 -->
+                <div class="bg-white rounded-3xl p-6 md:p-8 border border-slate-100 shadow-sm text-center flex flex-col items-center">
+                    <div class="w-20 h-20 md:w-24 md:h-24 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-calculator text-3xl md:text-4xl text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-3">Matematika</h3>
+                    <p class="text-slate-500 mb-8 leading-relaxed text-sm md:text-base">Matematika darslari o'quvchining bo'sh vaqtiga qarab jadval asosida qo'yiladi.</p>
+                    <button onclick="openModal('registerModal')" class="mt-auto px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-500 font-bold hover:bg-emerald-500 hover:text-white transition w-full">Batafsil ma'lumot</button>
+                </div>
+                 <!-- Course 4 -->
+                <div class="bg-white rounded-3xl p-6 md:p-8 border border-slate-100 shadow-sm text-center flex flex-col items-center">
+                    <div class="w-20 h-20 md:w-24 md:h-24 bg-yellow-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-comments text-3xl md:text-4xl text-yellow-500"></i>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-3">Ingliz tili</h3>
+                    <p class="text-slate-500 mb-8 leading-relaxed text-sm md:text-base">Ingliz tilini zamonaviy texnologiyalar asosida davomiy ravishda o'rganing.</p>
+                    <button onclick="openModal('registerModal')" class="mt-auto px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-500 font-bold hover:bg-emerald-500 hover:text-white transition w-full">Batafsil ma'lumot</button>
+                </div>
+                 <!-- Course 5 -->
+                <div class="bg-white rounded-3xl p-6 md:p-8 border border-slate-100 shadow-sm text-center flex flex-col items-center">
+                    <div class="w-20 h-20 md:w-24 md:h-24 bg-cyan-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-globe-asia text-3xl md:text-4xl text-cyan-500"></i>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-3">Ona tili va Adabiyot</h3>
+                    <p class="text-slate-500 mb-8 leading-relaxed text-sm md:text-base">Ona tili darslari o'quvchining bo'sh vaqtiga qarab jadval asosida qo'yib beriladi.</p>
+                    <button onclick="openModal('registerModal')" class="mt-auto px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-500 font-bold hover:bg-emerald-500 hover:text-white transition w-full">Batafsil ma'lumot</button>
+                </div>
+                 <!-- Course 6 -->
+                <div class="bg-white rounded-3xl p-6 md:p-8 border border-slate-100 shadow-sm text-center flex flex-col items-center">
+                    <div class="w-20 h-20 md:w-24 md:h-24 bg-indigo-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-book text-3xl md:text-4xl text-indigo-500"></i>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-3">Tarix</h3>
+                    <p class="text-slate-500 mb-8 leading-relaxed text-sm md:text-base">Tarix fanini chuqurlashtirilgan dastur asosida mutaxassislardan o'rganing.</p>
+                    <button onclick="openModal('registerModal')" class="mt-auto px-6 py-2.5 rounded-full border-2 border-emerald-500 text-emerald-500 font-bold hover:bg-emerald-500 hover:text-white transition w-full">Batafsil ma'lumot</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bizning Jamoa -->
+    <section id="team" class="py-16 md:py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+             <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Bizning Jamoa</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto px-4 text-sm md:text-base">Insonlarga xizmat qilish, ta'lim tarbiya berish - bizning hayotimizdagi eng oliyjanob va ziyo ulashuvchi maqsadimizdir!</p>
+            </div>
+            
+            <!-- Custom Carousel for Team -->
+            <div class="relative">
+                <div id="team-carousel" class="flex transition-transform duration-500 ease-in-out">
+                    <!-- Slide 1 (Group of 3 or 1 depending on screen) -->
+                    <div class="min-w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 flex-shrink-0 px-2">
+                        <!-- Team Member 1 -->
+                        <div class="bg-slate-50 rounded-2xl overflow-hidden shadow-sm group cursor-pointer" onclick="openModal('teacherModal1')">
+                            <div class="h-64 md:h-80 bg-slate-200 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                            <div class="p-6 bg-white transform translate-y-0 lg:translate-y-2 group-hover:translate-y-0 transition">
+                                <h4 class="text-lg md:text-xl font-bold text-slate-900">Xushnud Azizjanov</h4>
+                                <p class="text-slate-500 text-sm md:text-base">Rahbar</p>
+                            </div>
+                        </div>
+                        <!-- Team Member 2 -->
+                        <div class="bg-slate-50 rounded-2xl overflow-hidden shadow-sm group cursor-pointer hidden sm:block" onclick="openModal('teacherModal2')">
+                            <div class="h-64 md:h-80 bg-slate-200 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                            <div class="p-6 bg-white transform translate-y-0 lg:translate-y-2 group-hover:translate-y-0 transition">
+                                <h4 class="text-lg md:text-xl font-bold text-slate-900">Hakimjon Abdrimov</h4>
+                                <p class="text-slate-500 text-sm md:text-base">Biologiya fani o'qituvchisi</p>
+                            </div>
+                        </div>
+                        <!-- Team Member 3 -->
+                        <div class="bg-slate-50 rounded-2xl overflow-hidden shadow-sm group cursor-pointer hidden lg:block" onclick="openModal('teacherModal3')">
+                            <div class="h-64 md:h-80 bg-slate-200 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                            <div class="p-6 bg-white transform translate-y-0 lg:translate-y-2 group-hover:translate-y-0 transition">
+                                <h4 class="text-lg md:text-xl font-bold text-slate-900">Otabek Maksudov</h4>
+                                <p class="text-slate-500 text-sm md:text-base">Ingliz tili fani o'qituvchisi</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 2 -->
+                    <div class="min-w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 flex-shrink-0 px-2">
+                        <div class="bg-slate-50 rounded-2xl overflow-hidden shadow-sm group cursor-pointer" onclick="openModal('teacherModal2')">
+                            <div class="h-64 md:h-80 bg-slate-200 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                            <div class="p-6 bg-white transform translate-y-0 lg:translate-y-2 group-hover:translate-y-0 transition">
+                                <h4 class="text-lg md:text-xl font-bold text-slate-900">Hakimjon Abdrimov</h4>
+                                <p class="text-slate-500 text-sm md:text-base">Biologiya fani o'qituvchisi</p>
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 rounded-2xl overflow-hidden shadow-sm group cursor-pointer hidden sm:block" onclick="openModal('teacherModal3')">
+                            <div class="h-64 md:h-80 bg-slate-200 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                            <div class="p-6 bg-white transform translate-y-0 lg:translate-y-2 group-hover:translate-y-0 transition">
+                                <h4 class="text-lg md:text-xl font-bold text-slate-900">Otabek Maksudov</h4>
+                                <p class="text-slate-500 text-sm md:text-base">Ingliz tili fani o'qituvchisi</p>
+                            </div>
+                        </div>
+                         <div class="bg-slate-50 rounded-2xl overflow-hidden shadow-sm group cursor-pointer hidden lg:block" onclick="openModal('teacherModal1')">
+                            <div class="h-64 md:h-80 bg-slate-200 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                            <div class="p-6 bg-white transform translate-y-0 lg:translate-y-2 group-hover:translate-y-0 transition">
+                                <h4 class="text-lg md:text-xl font-bold text-slate-900">Xushnud Azizjanov</h4>
+                                <p class="text-slate-500 text-sm md:text-base">Rahbar</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex justify-center mt-8 gap-2" id="carousel-dots">
+                <button onclick="goToSlide(0)" class="w-3 h-3 rounded-full border border-emerald-500 bg-emerald-500 transition-colors duration-300"></button>
+                <button onclick="goToSlide(1)" class="w-3 h-3 rounded-full border border-slate-300 transition-colors duration-300"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- O'quvchilar Fikrlari -->
+    <section id="reviews" class="py-16 md:py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">O'quvchilar fikrlari</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                <!-- Video 1 -->
+                <div class="relative rounded-2xl md:rounded-3xl overflow-hidden aspect-[3/4] bg-slate-200 group cursor-pointer shadow-md bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition"></div>
+                    <div class="absolute bottom-4 right-4 md:bottom-6 md:right-6 w-12 h-12 md:w-14 md:h-14 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition">
+                        <i class="fas fa-play text-red-500 text-lg md:text-xl ml-1"></i>
+                    </div>
+                </div>
+                 <!-- Video 2 -->
+                <div class="relative rounded-2xl md:rounded-3xl overflow-hidden aspect-[3/4] bg-slate-200 group cursor-pointer shadow-md bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition"></div>
+                    <div class="absolute bottom-4 right-4 md:bottom-6 md:right-6 w-12 h-12 md:w-14 md:h-14 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition">
+                        <i class="fas fa-play text-red-500 text-lg md:text-xl ml-1"></i>
+                    </div>
+                </div>
+                 <!-- Video 3 -->
+                <div class="relative rounded-2xl md:rounded-3xl overflow-hidden aspect-[3/4] bg-slate-200 group cursor-pointer shadow-md bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1544717302-de2939b7ef71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition"></div>
+                    <div class="absolute bottom-4 right-4 md:bottom-6 md:right-6 w-12 h-12 md:w-14 md:h-14 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition">
+                        <i class="fas fa-play text-red-500 text-lg md:text-xl ml-1"></i>
+                    </div>
+                </div>
+                 <!-- Video 4 -->
+                <div class="relative rounded-2xl md:rounded-3xl overflow-hidden aspect-[3/4] bg-slate-200 group cursor-pointer shadow-md bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1506869408018-09cb9f3f9b2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition"></div>
+                    <div class="absolute bottom-4 right-4 md:bottom-6 md:right-6 w-12 h-12 md:w-14 md:h-14 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition">
+                        <i class="fas fa-play text-red-500 text-lg md:text-xl ml-1"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aloqa & Xarita (To'lov olib tashlandi, Xarita ustiga bosish ochilishi o'zgartirildi) -->
+    <section id="contact-section" class="py-16 md:py-20 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center mb-12 md:mb-16 relative">
+                 <!-- Decorative icons float around title (hidden on very small screens for cleanliness) -->
+                 <div class="hidden sm:flex absolute top-0 left-1/4 transform -translate-x-1/2 w-10 md:w-12 h-10 md:h-12 bg-blue-100 rounded-full items-center justify-center text-blue-500 text-lg md:text-xl shadow-sm rotate-12 opacity-80"><i class="fas fa-user-circle"></i></div>
+                 <div class="hidden sm:flex absolute top-4 right-1/4 transform translate-x-1/2 w-8 md:w-10 h-8 md:h-10 bg-green-100 rounded-lg items-center justify-center text-green-500 shadow-sm -rotate-12 opacity-80"><i class="fas fa-address-book"></i></div>
+                 <div class="hidden sm:flex absolute bottom-[-20px] md:bottom-[-30px] right-1/3 transform translate-x-1/2 w-12 md:w-14 h-8 md:h-10 bg-yellow-100 rounded-md items-center justify-center text-yellow-500 text-xl md:text-2xl shadow-sm rotate-12 opacity-80"><i class="fas fa-envelope-open-text"></i></div>
+                 
+                 <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 inline-block relative">
+                     Bog'lanish
+                     <div class="absolute -top-1 md:-top-2 -right-3 md:-right-4 w-1.5 md:w-2 h-1.5 md:h-2 bg-emerald-500 rounded-full"></div>
+                 </h2>
+                 
+                 <br>
+                 <div class="flex justify-center items-center gap-2 mt-4 text-slate-500 bg-slate-100 inline-flex px-4 md:px-6 py-1.5 md:py-2 rounded-full text-xs md:text-sm">
+                     <span>Kontakt</span>
+                     <span>/</span>
+                     <span class="font-medium text-slate-800">Ma'lumotlari</span>
+                 </div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 mt-12 md:mt-20 items-center justify-between bg-white border border-slate-100 shadow-xl rounded-2xl md:rounded-3xl p-6 md:p-8 relative overflow-hidden">
+                <!-- Xarita -->
+                <div class="w-full lg:w-1/3 h-56 md:h-64 bg-slate-200 rounded-xl md:rounded-2xl overflow-hidden relative shadow-inner cursor-pointer" onclick="window.open('https://maps.google.com/?q=Urganch', '_blank')">
+                    <!-- Map placeholder image -->
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 hover:scale-105" style="background-image: url('https://raw.githubusercontent.com/leaflet-extras/leaflet-providers/master/preview.png'); filter: grayscale(20%) sepia(10%);"></div>
+                    <div class="absolute inset-0 bg-white/30 backdrop-blur-[1px]"></div>
+                    
+                    <!-- Fake Map UI -->
+                    <div class="absolute top-3 left-3 bg-white px-2 md:px-3 py-1 md:py-1.5 rounded text-blue-600 text-[10px] md:text-xs font-bold shadow shadow-slate-300 flex items-center gap-1 cursor-pointer hover:bg-slate-50">
+                        Xaritalar <i class="fas fa-external-link-alt text-[8px] md:text-[10px]"></i>
+                    </div>
+                    
+                    <!-- Marker -->
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                        <i class="fas fa-map-marker-alt text-3xl md:text-4xl text-red-500 drop-shadow-md"></i>
+                        <div class="bg-white px-2 py-1 rounded text-red-600 text-[10px] md:text-xs font-bold shadow-md mt-1 whitespace-nowrap">
+                            "NSP" o'quv markazi
+                        </div>
+                    </div>
+                    
+                    <!-- Map Controls -->
+                    <div class="absolute bottom-2 left-2 flex gap-2 text-[10px] text-slate-600 font-medium">
+                        <div class="bg-white/80 px-1 py-0.5 rounded">Tezkor tugmalar</div>
+                        <div class="bg-white/80 px-1 py-0.5 rounded">Xarita axboroti ©2026</div>
+                    </div>
+                </div>
+                
+                <!-- Kontakt Ma'lumotlari -->
+                <div class="w-full lg:w-2/3 flex flex-col md:flex-row gap-6 md:gap-8 justify-around items-start md:items-center text-left">
+                    
+                    <!-- Manzil -->
+                    <div class="flex items-center gap-3 md:gap-4 w-full md:w-auto">
+                        <div class="w-12 h-12 md:w-14 md:h-14 bg-red-50 text-red-500 rounded-full flex items-center justify-center text-xl md:text-2xl shadow-inner shrink-0">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg md:text-xl font-bold text-slate-900">Manzil</h4>
+                            <p class="text-slate-500 text-xs md:text-sm mt-0.5 md:mt-1 max-w-[180px] md:max-w-[200px]">Urganch shahar Ma'rifatchilar ko'chasi 100-A uy</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Pochta -->
+                    <div class="flex items-center gap-3 md:gap-4 w-full md:w-auto">
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-blue-50 text-blue-500 rounded-full flex items-center justify-center text-lg md:text-xl shadow-inner shrink-0">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-base md:text-lg font-bold text-slate-900">Pochta</h4>
+                            <a href="mailto:info@elnur.uz" class="text-slate-500 text-xs md:text-sm mt-0.5 md:mt-1 hover:text-blue-500 transition block">info@elnur.uz</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Telefon -->
+                    <div class="flex items-center gap-3 md:gap-4 w-full md:w-auto">
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-green-50 text-green-500 rounded-full flex items-center justify-center text-lg md:text-xl shadow-inner shrink-0">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-base md:text-lg font-bold text-slate-900">Telefon</h4>
+                            <a href="tel:+998950351100" class="text-slate-500 text-xs md:text-sm mt-0.5 md:mt-1 hover:text-green-500 transition block">+998950351100</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Modals -->
+    
+    <!-- Registration Modal -->
+    <div id="registerModal" class="fixed inset-0 z-[100] bg-slate-900/60 backdrop-blur-sm items-center justify-center p-4">
+        <div class="bg-slate-50 w-full max-w-3xl rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[95vh] md:max-h-[90vh]" onclick="event.stopPropagation()">
+            
+            <div class="flex justify-between items-center p-4 md:p-6 border-b border-slate-200 bg-white">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 md:w-10 md:h-10 bg-emerald-600 rounded-lg md:rounded-xl flex items-center justify-center text-white font-bold text-lg md:text-xl">E</div>
+                    <span class="font-bold text-lg md:text-xl text-slate-800">Elnur</span>
+                </div>
+                <button onclick="closeModal('registerModal')" class="text-slate-400 hover:text-slate-700 transition p-2">
+                    <i class="fas fa-times text-xl md:text-2xl"></i>
+                </button>
+            </div>
+            
+            <div class="p-4 md:p-8 overflow-y-auto">
+                <div class="text-center mb-6 md:mb-8">
+                    <div class="w-12 h-12 md:w-16 md:h-16 bg-emerald-600 rounded-xl flex items-center justify-center text-white text-xl md:text-2xl mx-auto mb-3 md:mb-4">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h2 class="text-xl md:text-2xl font-bold text-slate-900">Kursga ro'yxatdan o'tish</h2>
+                </div>
+                
+                <form class="space-y-4 md:space-y-6">
+                    <div>
+                        <label class="block text-xs md:text-sm font-semibold text-slate-700 mb-1">Filial</label>
+                        <select class="w-full px-3 py-2.5 md:px-4 md:py-3 rounded-lg md:rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-sm md:text-base">
+                            <option>Filial tanlang</option>
+                            <option>Urganch filiali</option>
+                        </select>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                        <div>
+                            <label class="block text-xs md:text-sm font-semibold text-slate-700 mb-1">Ism <span class="text-red-500">*</span></label>
+                            <input type="text" placeholder="Ismingizni yozing" class="w-full px-3 py-2.5 md:px-4 md:py-3 rounded-lg md:rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-sm md:text-base">
+                        </div>
+                        <div>
+                            <label class="block text-xs md:text-sm font-semibold text-slate-700 mb-1">Familiya</label>
+                            <input type="text" placeholder="Familiyangizni yozing" class="w-full px-3 py-2.5 md:px-4 md:py-3 rounded-lg md:rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-sm md:text-base">
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                        <div>
+                            <label class="block text-xs md:text-sm font-semibold text-slate-700 mb-1">Telefon raqam <span class="text-red-500">*</span></label>
+                            <input type="tel" value="+998" class="w-full px-3 py-2.5 md:px-4 md:py-3 rounded-lg md:rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-sm md:text-base">
+                        </div>
+                        <div>
+                            <label class="block text-xs md:text-sm font-semibold text-slate-700 mb-1">Kurs</label>
+                            <select class="w-full px-3 py-2.5 md:px-4 md:py-3 rounded-lg md:rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-slate-600 text-sm md:text-base">
+                                <option>Kurs tanlang</option>
+                                <option>Biologiya</option>
+                                <option>Kimyo</option>
+                                <option>Matematika</option>
+                                <option>Ingliz tili</option>
+                                <option>Ona tili va Adabiyot</option>
+                                <option>Tarix</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                        <div>
+                            <label class="block text-xs md:text-sm font-semibold text-slate-700 mb-1">Dars kunlari</label>
+                            <select class="w-full px-3 py-2.5 md:px-4 md:py-3 rounded-lg md:rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-slate-600 text-sm md:text-base">
+                                <option>Dars kunini tanlang</option>
+                                <option>Toq kunlar</option>
+                                <option>Juft kunlar</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs md:text-sm font-semibold text-slate-700 mb-1">Dars vaqti</label>
+                            <select class="w-full px-3 py-2.5 md:px-4 md:py-3 rounded-lg md:rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-slate-600 text-sm md:text-base">
+                                <option>Dars vaqtini tanlang</option>
+                                <option>Ertalabki</option>
+                                <option>Tushki</option>
+                                <option>Kechki</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs md:text-sm font-semibold text-slate-700 mb-1">Izoh</label>
+                        <textarea rows="2" md:rows="3" placeholder="Izoh..." class="w-full px-3 py-2.5 md:px-4 md:py-3 rounded-lg md:rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-sm md:text-base"></textarea>
+                    </div>
+
+                    <button type="button" onclick="alert('Arizangiz muvaffaqiyatli qabul qilindi!'); closeModal('registerModal');" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 md:py-4 rounded-xl transition shadow-lg shadow-blue-200 mt-2 md:mt-4 text-base md:text-lg">
+                        Ariza yuborish
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Teacher Modal 1 -->
+    <div id="teacherModal1" class="fixed inset-0 z-[100] bg-slate-900/60 backdrop-blur-sm items-center justify-center p-4">
+        <div class="bg-white w-full max-w-lg rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden flex flex-col" onclick="event.stopPropagation()">
+            <div class="relative h-64 bg-slate-200 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                <button onclick="closeModal('teacherModal1')" class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-slate-800 hover:bg-white transition shadow">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="p-8 text-center">
+                <h3 class="text-2xl font-bold text-slate-900 mb-1">Xushnud Azizjanov</h3>
+                <p class="text-emerald-500 font-medium mb-6">Markaz Rahbari</p>
+                <p class="text-slate-600 mb-6 leading-relaxed">Elnur o'quv markazining asoschisi va boshqaruvchisi. Ta'lim sohasida 15 yillik tajribaga ega. Yoshlarga zamonaviy ta'lim berish va ularning kelajagini yaratishda o'z hissasini qo'shib kelmoqda.</p>
+                <div class="flex justify-center gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-blue-100 hover:text-blue-600 transition"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-pink-100 hover:text-pink-600 transition"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Teacher Modal 2 -->
+    <div id="teacherModal2" class="fixed inset-0 z-[100] bg-slate-900/60 backdrop-blur-sm items-center justify-center p-4">
+        <div class="bg-white w-full max-w-lg rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden flex flex-col" onclick="event.stopPropagation()">
+            <div class="relative h-64 bg-slate-200 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                <button onclick="closeModal('teacherModal2')" class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-slate-800 hover:bg-white transition shadow">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="p-8 text-center">
+                <h3 class="text-2xl font-bold text-slate-900 mb-1">Hakimjon Abdrimov</h3>
+                <p class="text-emerald-500 font-medium mb-6">Biologiya fani oliy toifali o'qituvchisi</p>
+                <p class="text-slate-600 mb-6 leading-relaxed">20 yillik pedagogik stajga ega. Uning qo'l ostida yuzlab o'quvchilar tibbiyot oliygohlariga yuqori ballar bilan qabul qilingan. Darslarini innovatsion metodlar yordamida olib boradi.</p>
+                <div class="flex justify-center gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-blue-100 hover:text-blue-600 transition"><i class="fab fa-telegram-plane"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Teacher Modal 3 -->
+    <div id="teacherModal3" class="fixed inset-0 z-[100] bg-slate-900/60 backdrop-blur-sm items-center justify-center p-4">
+        <div class="bg-white w-full max-w-lg rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden flex flex-col" onclick="event.stopPropagation()">
+            <div class="relative h-64 bg-slate-200 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                <button onclick="closeModal('teacherModal3')" class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-slate-800 hover:bg-white transition shadow">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="p-8 text-center">
+                <h3 class="text-2xl font-bold text-slate-900 mb-1">Otabek Maksudov</h3>
+                <p class="text-emerald-500 font-medium mb-6">Ingliz tili IELTS instruktori</p>
+                <p class="text-slate-600 mb-6 leading-relaxed">IELTS 8.0 sertifikatiga ega tajribali mutaxassis. Zamonaviy yondashuv va intensiv darslar orqali o'quvchilarni qisqa vaqt ichida yuqori natijalarga tayyorlaydi.</p>
+                <div class="flex justify-center gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-blue-100 hover:text-blue-600 transition"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-pink-100 hover:text-pink-600 transition"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer (Responsive dumaloq shaklda taxlangan holda qoldirildi, oldingi dizaynga tegmadik) -->
+    <footer class="bg-[#0b1120] text-slate-300 py-12 md:py-16 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8">
+                
+                <!-- Col 1 -->
+                <div class="flex flex-col items-start lg:items-center">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center p-1 border-4 border-emerald-500 mb-4">
+                        <div class="w-full h-full border-[3px] border-emerald-500 rounded-full flex items-center justify-center">
+                            <span class="font-extrabold text-4xl text-emerald-600">E</span>
+                        </div>
+                    </div>
+                    <h3 class="text-white font-bold text-lg md:text-xl text-left lg:text-center">Elnur - Tabiiy fanlar loyihasi</h3>
+                </div>
+                
+                <!-- Col 2 -->
+                <div class="flex flex-col items-start lg:items-center">
+                    <div class="w-full lg:w-auto">
+                        <h4 class="text-white font-bold text-base md:text-lg mb-4 md:mb-6">Foydali havola</h4>
+                        <ul class="space-y-3 md:space-y-4 text-sm md:text-base">
+                            <li><a href="#home" class="text-slate-400 hover:text-white transition flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-slate-500"></div> Bosh sahifa</a></li>
+                            <li><a href="#courses" class="text-slate-400 hover:text-white transition flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-slate-500"></div> Kurslar</a></li>
+                            <li><a href="#about" class="text-slate-400 hover:text-white transition flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-slate-500"></div> Biz haqimizda</a></li>
+                            <li><a href="#reviews" class="text-slate-400 hover:text-white transition flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-slate-500"></div> Foto lavhalar</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Col 3 -->
+                <div class="flex flex-col items-start lg:items-center">
+                    <div class="w-full lg:w-auto">
+                        <h4 class="text-white font-bold text-base md:text-lg mb-4 md:mb-6">Foydali havola</h4>
+                        <ul class="space-y-3 md:space-y-4 text-sm md:text-base">
+                            <li><a href="#home" class="text-slate-400 hover:text-white transition flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-slate-500"></div> Bosh sahifa</a></li>
+                            <li><a href="#courses" class="text-slate-400 hover:text-white transition flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-slate-500"></div> Kurslar</a></li>
+                            <li><a href="#about" class="text-slate-400 hover:text-white transition flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-slate-500"></div> Biz haqimizda</a></li>
+                            <li><a href="#reviews" class="text-slate-400 hover:text-white transition flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-slate-500"></div> Foto lavhalar</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Col 4 -->
+                <div class="flex flex-col items-start lg:items-center">
+                    <div class="w-full lg:w-auto">
+                        <h4 class="text-white font-bold text-base md:text-lg mb-4 md:mb-6">Kontakt ma'lumotlari</h4>
+                        <ul class="space-y-4 md:space-y-6 text-sm md:text-base">
+                            <li class="flex items-center gap-3 md:gap-4">
+                                <i class="fas fa-phone-alt text-slate-500"></i>
+                                <a href="tel:+998950351100" class="text-slate-400 hover:text-white transition">+99895-035-11-00</a>
+                            </li>
+                            <li class="flex items-center gap-3 md:gap-4">
+                                <i class="far fa-envelope text-slate-500"></i>
+                                <a href="mailto:info@elnur.uz" class="text-slate-400 hover:text-white transition break-all">info@elnur.uz</a>
+                            </li>
+                            <li class="flex items-start gap-3 md:gap-4">
+                                <i class="fas fa-map-marker-alt text-slate-500 mt-1"></i>
+                                <span class="text-slate-400">Urganch shahar<br>Ma'rifatchilar 100A-uy</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Phone Float Icon -->
+    <a href="tel:+998950351100" class="fixed bottom-4 right-4 md:bottom-6 md:right-6 w-12 h-12 md:w-16 md:h-16 bg-emerald-500 text-white rounded-full flex items-center justify-center text-xl md:text-2xl shadow-[0_0_20px_rgba(16,185,129,0.5)] hover:bg-emerald-600 hover:scale-110 transition-all z-40">
+        <i class="fas fa-phone-alt"></i>
+    </a>
+
+    <script>
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('show');
+            document.body.style.overflow = 'hidden'; 
+        }
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside
+        const modals = ['registerModal', 'teacherModal1', 'teacherModal2', 'teacherModal3'];
+        modals.forEach(id => {
+            const modal = document.getElementById(id);
+            if(modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        closeModal(id);
+                    }
+                });
+            }
+        });
+        
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        });
+
+        // Close mobile menu when a link is clicked
+        const menuLinks = menu.querySelectorAll('a, button');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                menu.classList.remove('flex');
+            });
+        });
+        
+        // Custom Carousel Logic for Team Section
+        let currentSlide = 0;
+        const totalSlides = 2;
+        const carousel = document.getElementById('team-carousel');
+        const dots = document.getElementById('carousel-dots').children;
+
+        function goToSlide(index) {
+            currentSlide = index;
+            // Update translation
+            carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots
+            for(let i=0; i<dots.length; i++) {
+                if(i === index) {
+                    dots[i].className = "w-3 h-3 rounded-full border border-emerald-500 bg-emerald-500 transition-colors duration-300";
+                } else {
+                    dots[i].className = "w-3 h-3 rounded-full border border-slate-300 transition-colors duration-300";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
